@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap");
-
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=IBM+Plex+Sans&display=swap');
 *,
 *::before,
 *::after {
@@ -9,16 +8,46 @@
 body {
   margin: 0;
   font-family: "IBM Plex Mono", monospace;
-  font-size: 16px;
+  font-size: 14px;
+  line-height: 22px;
   font-weight: 400;
-  line-height: 28px;
   color: #060a24;
   text-align: left;
+}
+
+@media (min-width: 768px) {
+  body {
+    font-size: 16px;
+    line-height: 24px;
+  }
 }
 
 img,
 svg {
   vertical-align: middle;
+}
+
+h1 {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 36px;
+  line-height: 42px;
+  margin: 0 0 12px;
+}
+
+p {
+  margin: 0 0 24px;
+}
+
+section {
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
+@media (min-width: 768px) {
+  section {
+    padding-top: 96px;
+    padding-bottom: 96px;
+  }
 }
 
 /* LINKS */
@@ -54,20 +83,43 @@ a:hover {
 
 /* BUTTON */
 .btn {
-  font-size: 16px;
-  display: inline-block;
+  display: block;
   padding: 0;
-  text-align: center;
-  vertical-align: middle;
   color: #060a24;
+  font-size: 16px;
+  text-align: center;
+  text-transform: uppercase;
   background-color: transparent;
-  border: 1px solid transparent;
+  border: none;
   border-radius: 2px;
   cursor: pointer;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+@media (min-width: 768px) {
+  .btn {
+    display: inline-block;
+    font-size: 18px;
+    line-height: 24px;
+  }
 }
 
 .btn:focus {
-  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.5);
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.25);
+}
+
+.btn-primary {
+  background-color: #00f3bb;
+  padding: 12px 48px;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+  color: #fff;
+  background-image: linear-gradient(225deg, #0000fe 0%, #00f0b8 100%);
 }
 
 /* NAVBAR */
@@ -95,11 +147,8 @@ a:hover {
 /* NAVBAR TOGGLER */
 .navbar-toggler {
   position: relative;
-  width: 18px;
-  height: 18px;
-}
-.navbar-toggler.btn:focus {
-  box-shadow: none;
+  width: 20px;
+  height: 20px;
 }
 
 @media (min-width: 768px) {
@@ -203,4 +252,19 @@ a:hover {
     padding: 0 24px;
     color: #060a24;
   }
+}
+
+/* UTILS */
+.text-decoration-line-through {
+  text-decoration: line-through !important;
+}
+
+.br-mobile {
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .br-mobile {
+    display: inline;
+  }  
 }
