@@ -1,0 +1,84 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 3rem;
+  font-family: sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: black;
+  text-align: center;
+  background-color: white;
+}
+
+/* Button */
+.btn {
+  display: inline-block;
+  padding: 0.25rem;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 16px;
+  color: black;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+
+.btn:focus {
+  box-shadow: none;
+}
+
+/* Navbar toggler */
+.navbar-toggler {
+  position: relative;
+  height: 1.625rem;
+  width: 1.75rem;
+}
+.navbar-toggler.btn:focus {
+  box-shadow: none;
+}
+
+@media (min-width: 768px) {
+  .navbar-toggler {
+    display: none;
+  }
+}
+
+.navbar-toggler .bar {
+  height: 0.125rem;
+  width: 1.5rem;
+  background-color: black;
+  transition: all 0.2s ease;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.navbar-toggler .bar:nth-of-type(2) {
+  top: 25%;
+}
+
+.navbar-toggler .bar:nth-of-type(1) {
+  top: 75%;
+}
+
+.navbar-toggler.show .bar:nth-of-type(2) {
+  opacity: 0;
+}
+
+.navbar-toggler.show .bar:nth-of-type(1) {
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.navbar-toggler.show .bar:nth-of-type(3) {
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
